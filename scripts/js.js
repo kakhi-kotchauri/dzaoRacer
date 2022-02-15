@@ -116,11 +116,11 @@ if ( mobiledisp !== 'none' && parseInt(blockleftp) < -width * 80 / 100 && random
 }
 
 
-if ( mobiledisp === 'none' && parseInt(blockleftp) < -width * 120 / 100 && randomnum === 2) {
+if ( mobiledisp === 'none' && parseInt(blockleftp) < -width * 115 / 100 && randomnum === 2) {
   changeplane = true
 }
 
-if ( mobiledisp === 'none' && parseInt(blockleftp) < -width * 120 / 100 && randomnum !== 2 ) {
+if ( mobiledisp === 'none' && parseInt(blockleftp) < -width * 115 / 100 && randomnum !== 2 ) {
   changeplane = false
 }
 
