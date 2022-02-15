@@ -82,7 +82,7 @@ body {
   height: 9VW;
   position: absolute;
   display: inline-block;
-  top: 21.2vw;
+  top: 20.4vw;
   left: 78.5%;
   /* animation: block 1.7s infinite linear; */
   animation-delay: 1s;
@@ -336,7 +336,7 @@ body {
      /* background-color: red; */
      position: absolute;
      display: inline-block;
-     top: 59.5vw;
+     top: 58.4vw;
      left: 70%;
      animation: block 1.7s infinite linear;
  }

@@ -134,7 +134,6 @@ if (intersectstatus === false) {
   
   if (changeisland && stopstop2) {
     blockimg.src = 'pictures/island2.png'
-    // console.log('newis')
     stopstop2 = false
   }
   
@@ -152,7 +151,6 @@ if (intersectstatus === false) {
 
   if (changeplane && stopstop3) {
     plane2.src = 'pictures/plane2green.png'
-    // console.log('newis')
     stopstop3 = false
   }
   
@@ -173,7 +171,6 @@ if (intersectstatus === false) {
 
 if (movmentcounter >= 0) {
   speed = speed - multiply
-  // delay = delay + multiply
 
   if(gamestat === true){
   exp()
@@ -298,7 +295,6 @@ setInterval(function(){
   let div1Bottom = div1.bottom
   let div1height = div1.height
 
-  // console.log(div1height)
   
   let div2 = collider.getBoundingClientRect();
   let div2Top = div2.top;
@@ -318,8 +314,6 @@ setInterval(function(){
   } else{
      verticalMatch = false
   }
-
-  // console.log()
 
   
   if ((div2Right > div1Left && div2Right < div1Right)||(div2Left < div1Right && div2Left > div1Left)) {
@@ -363,14 +357,9 @@ setInterval(function(){
   let blockleftp = window.getComputedStyle(block).getPropertyValue('left')
 
 
-
-  // console.log(blockleftp)
-  // console.log(par.offsetWidth)
-
        if (parseInt(blockleftp) < 0 && stoper) {
          movmentcounter = movmentcounter + 1
          stoper = false
-        //  console.log(movmentcounter)
         }
 
         if(parseInt(blockleftp) > 0) {
@@ -412,7 +401,6 @@ function getRotationAngle(target)
     score1.style.display = 'block'
     record.style.display = 'block'
     character.src = 'pictures/dest.png'
-    // console.log('dest')
     blockimg.src = 'pictures/destcliff.png'
     score.textContent = `ძაო დაიმტვრა`
     record.textContent = ` ძაოს რეკორდი: დონე: ${maxlvl}, ქულა: ${maxscore},`
@@ -436,11 +424,6 @@ function getRotationAngle(target)
        }
     }
 
-    // if (!mobile) {
-    //   character.style.width = '14.5%'
-    // } else {
-    //   character.style.width = '9.2%'
-    // }
   }
 
 }, 10);
@@ -460,7 +443,6 @@ function restart() {
   character.style.top = 'unset'
   character.style.transform = `rotate(0deg)`
   block.style.left = 'unset'
-  // newobj.style.left = 'unset'
   intersectstatus = false
   gamestat = true
   setTimeout(() => {
@@ -479,13 +461,6 @@ function restart() {
   if (mobile) {
     multiply = 0.02
   }
-
-  // if (!mobile) {
-  //   character.style.width = '13%'
-  // } else {
-  //   character.style.width = '8.2%'
-  // }
-
   lvl = 0
   stopstop = true
   delay = 2500
