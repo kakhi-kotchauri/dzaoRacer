@@ -347,7 +347,7 @@ body {
   height: 14vw;
   /* background-color: blue; */
   position: absolute;
-  bottom: 23vw;
+  bottom: 24vw;
   margin-left: 13vw;
 }
 
@@ -438,8 +438,8 @@ body {
      50%{transform: rotate(0deg)}
      75%{transform: rotate(20deg)}
      100%{transform: rotate(0deg)}
-     30%{top: 40vw}
-     70%{top: 40vw}
+     30%{top: 39vw}
+     70%{top: 39vw}
      100%{top: 57vw}
  }  
  

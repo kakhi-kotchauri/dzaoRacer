@@ -51,7 +51,7 @@ width = portwidth.offsetWidth
   if (mobile) {
    mobile = window.getComputedStyle(test, null).display 
    if(mobile === 'none') {
-    speed = 2000
+    speed = 1850
     multiply = 0.02
     mobile = false
    }
