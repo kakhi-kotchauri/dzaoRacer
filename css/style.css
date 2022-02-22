@@ -3,6 +3,11 @@ html {
   background-color: rgba(161, 163, 168, 0.349);
 }
 
+.startext {
+  font-size: 2vw;
+  color: rgb(109, 45, 25);
+}
+
 .signpar {
  position: absolute;
  bottom: 1vw;
@@ -204,10 +209,13 @@ body {
     overflow: hidden;           
     height: 30vw;
     margin-top: 7vw;
-    background-color: gray;
+    background-color: rgb(121, 162, 179);
     border: solid;
     border-width: 0.2vw;
     border-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sea {

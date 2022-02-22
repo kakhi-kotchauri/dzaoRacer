@@ -15,7 +15,9 @@ const test = document.querySelector('#test')
 const portwidth = document.querySelector('#width')
 const plane2 = document.querySelector('#plane2')
 const horizone2 = document.querySelector('#horizone2')
-
+const someaudio = document.querySelector('#audio')
+const parchild = document.querySelector('#par-child')
+const starttext = document.querySelector('#startext')
 
 
 
@@ -23,7 +25,7 @@ const horizone2 = document.querySelector('#horizone2')
 let storer = 0
 let maxscore = storer
 let speed = 2600
-let gamestat = true
+let gamestat = false
 let intersectstatus = false
 let movmentcounter = 0
 let multiply = 0.05
@@ -39,6 +41,70 @@ let changeplane = false
 let randomnum = null
 let width = null
 let runstatus = true
+let loadstatus = true
+
+parchild.style.display = 'none'
+
+
+html.addEventListener('keydown', start)
+
+function start(event) {
+  if(event.code === 'Space' && loadstatus) {
+  parchild.style.display = 'block'
+  par.style.display = 'block'
+  starttext.style.display = 'none'
+    restart()
+    loadstatus = false
+    gamestat = true
+  }
+}
+
+body.addEventListener('touchstart', function() {
+  
+  if(loadstatus) {
+    parchild.style.display = 'block'
+    par.style.display = 'block'
+    starttext.style.display = 'none'
+      restart()
+      loadstatus = false
+      gamestat = true
+    }
+  
+
+})
+
+
+
+
+
+function jumpsound() {
+  let audio = new Audio('audio/jump.mp3');
+  audio.play();
+}
+
+
+function crashsound() {
+  let audio = new Audio('audio/crash.mp3');
+  audio.play();
+}
+
+
+function pigsound() {
+  let audio = new Audio('audio/pig.mp3');
+  audio.play();
+}
+
+function scoresound() {
+  let audio = new Audio('audio/score.mp3');
+  audio.play();
+}
+
+
+function scootersound() {
+  someaudio.play();
+}
+
+
 
 
 
@@ -70,6 +136,7 @@ setInterval(() => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
  }
  randomnum = randomizer(1, 2)
+ 
 
 }, 200);
 
@@ -194,6 +261,11 @@ setInterval(() => {
   } else {
   score.textContent = `"ზარულიომ ჯადოქარი"`
   }
+
+  if(storer % 100 === 0) {
+    scoresound()
+  }
+
   }
 }, 100);
 
@@ -216,7 +288,8 @@ setInterval(() => {
       if(event.code === 'ArrowUp' || event.code === 'Space') {
   
         if(character.classList.value !== 'animate') {
-
+ 
+            jumpsound()
             character.classList.remove('animate1')
             character.classList.add('animate')
             character.src = 'pictures/jumped.png'
@@ -259,6 +332,7 @@ setInterval(() => {
 
     if(intersectstatus === false) {
       if(character.classList.value !== 'animate') {
+        jumpsound()
         character.classList.remove('animate1')
         character.classList.add('animate')
         character.src = 'pictures/jumped.png'
@@ -422,7 +496,13 @@ function getRotationAngle(target)
        if (changeplane) {
          plane2.src = 'pictures/plane2greendest.png'
        }
+       pigsound()
+    } else {
+      crashsound()
     }
+    
+  someaudio.src = './audio/scootermuted.mp3'
+
 
   }
 
@@ -470,4 +550,6 @@ function restart() {
   setTimeout(() => {
     runstatus = true
   }, 20);
+  someaudio.src = './audio/scooter5.wav'
+  scootersound()
 }
