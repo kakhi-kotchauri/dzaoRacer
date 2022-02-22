@@ -6,6 +6,7 @@ html {
 .startext {
   font-size: 2vw;
   color: rgb(109, 45, 25);
+  text-align: center;
 }
 
 .signpar {
@@ -285,6 +286,13 @@ body {
 
 
 @media only screen and (max-width: 600px) {
+
+  .startext {
+    font-size: 4vw;
+    line-height: 1.7;
+    color: rgb(109, 45, 25);
+    text-align: center;
+  }
 
   .signpar {
     position: absolute;

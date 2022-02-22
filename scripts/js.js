@@ -24,7 +24,7 @@ const starttext = document.querySelector('#startext')
 
 let storer = 0
 let maxscore = storer
-let speed = 2600
+let speed = 2500
 let gamestat = false
 let intersectstatus = false
 let movmentcounter = 0
@@ -44,35 +44,6 @@ let runstatus = true
 let loadstatus = true
 
 parchild.style.display = 'none'
-
-
-html.addEventListener('keydown', start)
-
-function start(event) {
-  if(event.code === 'Space' && loadstatus) {
-  parchild.style.display = 'block'
-  par.style.display = 'block'
-  starttext.style.display = 'none'
-    restart()
-    loadstatus = false
-    gamestat = true
-  }
-}
-
-body.addEventListener('touchstart', function() {
-  
-  if(loadstatus) {
-    parchild.style.display = 'block'
-    par.style.display = 'block'
-    starttext.style.display = 'none'
-      restart()
-      loadstatus = false
-      gamestat = true
-    }
-  
-
-})
-
 
 
 
@@ -105,6 +76,40 @@ function scootersound() {
 }
 
 
+
+
+
+html.addEventListener('keydown', start)
+
+function start(event) {
+  if(event.code === 'Space' && loadstatus) {
+     clickstart()
+  }
+}
+
+
+html.addEventListener('click', mobilestart)
+
+function mobilestart() {
+  
+  if(loadstatus) {
+    clickstart()
+  }
+
+}
+
+
+
+function clickstart() {
+  parchild.style.display = 'block'
+  par.style.display = 'block'
+  starttext.style.display = 'none'
+  restart()
+    loadstatus = false
+    gamestat = true  
+    html.removeEventListener('click', mobilestart)
+    html.removeEventListener('keydown', start)
+ }
 
 
 
@@ -531,7 +536,7 @@ function restart() {
     newobj.style.display = 'inline-block'
     newobj.classList.add('newobj')
   }, 40);
-  speed = 2600
+  speed = 2500
   score1.style.display = 'none'
   record.style.display = 'none'
   character.classList.remove('smt')
