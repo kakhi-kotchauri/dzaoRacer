@@ -4,7 +4,7 @@ Click anywhere on the page or press the spacebar or up arrow to jump. Press spac
 
 GitHub Page { https://kakhi-kotchauri.github.io/dzao/ }
 
-
+/////////
 
 ინსტრუქცია.
 
